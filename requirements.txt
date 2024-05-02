@@ -1,5 +1,4 @@
 streamlit
-pandas
-requests
-PyMuPDF
-unidecode
+pyngrok
+python-docx
+openai
