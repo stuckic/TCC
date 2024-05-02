@@ -2,8 +2,6 @@ import streamlit as st
 from docx import Document
 from openai import OpenAI
 
-client = openai.ChatCompletion.create()
-
 # Configuração da chave API da OpenAI
 openai.api_key = KEY
 
