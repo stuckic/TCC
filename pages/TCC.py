@@ -3,11 +3,11 @@ from docx import Document
 from openai import OpenAI
 
 # 2. Configuração da API do OpenAI
-#chave = st.secrets["CHAVE_API"]
-#client = OpenAI(api_key=chave)
+chave = st.secrets["KEY"]
+client = OpenAI(api_key=chave)
 
 # Configuração da chave API da OpenAI
-openai.api_key = st.secrets["KEY"]
+#openai.api_key = st.secrets["KEY"]
 
 def extract_text_from_docx(file):
     doc = Document(file)
