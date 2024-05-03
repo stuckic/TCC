@@ -1,3 +1,4 @@
+pip install --upgrade python-docx
 import streamlit as st
 from docx import Document
 from openai import OpenAI
@@ -10,11 +11,15 @@ client = OpenAI(api_key=chave)
 #openai.api_key = st.secrets["KEY"]
 
 def extract_text_from_docx(file):
-    doc = Document(file)
-    full_text = []
-    for para in doc.paragraphs:
-        full_text.append(para.text)
-    return '\n'.join(full_text)
+    try:
+        doc = Document(file)
+        full_text = []
+        for para in doc.paragraphs:
+            full_text.append(para.text)
+        return '\n'.join(full_text)
+    except Exception as e:
+        print(f"Erro ao processar o arquivo: {file.name}. Erro: {str(e)}")
+        return ""
 
 def retrieve_information(documents, query):
     # Implementação de uma busca simples nos documentos
